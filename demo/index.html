@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laplace Tides — CSS Design System</title>
+  <link rel="stylesheet" href="laplace-tides.css" />
+  <!-- Google Fonts: Inter + Plus Jakarta Sans + Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-abyss-950 text-foam-100 font-sans antialiased">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       NAV
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <nav class="tide-nav">
+    <div class="tide-nav-inner">
+      <a href="#" class="tide-nav-brand">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" stroke="url(#navGrad)" stroke-width="2"/>
+          <path d="M5 16 Q10 10 14 14 Q18 18 23 12" stroke="url(#navGrad2)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <defs>
+            <linearGradient id="navGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00a0bd"/><stop offset="1" stop-color="#00ffd4"/>
+            </linearGradient>
+            <linearGradient id="navGrad2" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00c4dc"/><stop offset="1" stop-color="#00e8bf"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Laplace Tides
+      </a>
+      <div class="tide-nav-links hidden md:flex">
+        <a href="#colors"     class="tide-nav-link">Colors</a>
+        <a href="#typography" class="tide-nav-link">Type</a>
+        <a href="#buttons"    class="tide-nav-link">Buttons</a>
+        <a href="#cards"      class="tide-nav-link">Cards</a>
+        <a href="#forms"      class="tide-nav-link">Forms</a>
+        <a href="#components" class="tide-nav-link">Components</a>
+        <a href="#animations" class="tide-nav-link">Animations</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/NagusameCS/LaplaceTidesCSS" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.82 1.23.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.69 7.69 0 018 4.07c.68 0 1.36.09 2 .27 1.52-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a href="#" class="btn btn-current btn-sm">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section class="bg-gradient-hero tide-section-lg relative overflow-hidden">
+    <!-- Decorative blobs -->
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full opacity-20"
+        style="background: radial-gradient(ellipse, #00a0bd 0%, transparent 70%);"></div>
+      <div class="absolute top-1/4 -left-40 w-96 h-96 rounded-full opacity-10"
+        style="background: radial-gradient(ellipse, #00e8bf 0%, transparent 70%);"></div>
+      <div class="absolute top-1/3 -right-32 w-72 h-72 rounded-full opacity-10"
+        style="background: radial-gradient(ellipse, #00c4dc 0%, transparent 70%);"></div>
+    </div>
+
+    <div class="tide-container relative text-center">
+      <div class="inline-flex items-center gap-2 mb-8">
+        <span class="badge badge-current">v1.0</span>
+        <span class="badge badge-biolume">Tailwind CSS Plugin</span>
+      </div>
+
+      <h1 class="font-display text-6xl md:text-8xl font-extrabold mb-6 leading-none tracking-tight">
+        <span class="text-gradient-tide">Laplace</span>
+        <span class="text-foam-50"> Tides</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-muted max-w-2xl mx-auto mb-4 leading-relaxed">
+        A deep-ocean design system—named after Pierre-Simon Laplace—shipped as a Tailwind CSS plugin.
+        Rich color palettes, polished components, fluid animations.
+      </p>
+      <p class="text-base text-faint max-w-xl mx-auto mb-12">
+        Every token, every component, every utility crafted around the mathematics of tidal flows.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#colors" class="btn btn-current btn-xl">
+          Explore the System
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M9 14l5-5-5-5M4 9h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="https://github.com/NagusameCS/LaplaceTidesCSS" class="btn btn-outline btn-xl" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+
+      <!-- Quick-start snippet -->
+      <div class="mt-16 max-w-lg mx-auto">
+        <div class="tide-code-block text-left">
+          <span class="text-foam-400">// tailwind.config.js</span><br/>
+          <span class="text-tide-300">module</span><span class="text-foam-200">.exports = {</span><br/>
+          <span class="text-foam-200">&nbsp;&nbsp;plugins: [</span><span class="text-biolume-300">require</span><span class="text-foam-200">(</span><span class="text-sand-300">'laplace-tides-css'</span><span class="text-foam-200">)],</span><br/>
+          <span class="text-foam-200">};</span>
+        </div>
+      </div>
+
+      <!-- Stat row -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        <div class="tide-stat items-center text-center">
+          <span class="tide-stat-value text-gradient-biolume">7</span>
+          <span class="tide-stat-label">Color Scales</span>
+        </div>
+        <div class="tide-stat items-center text-center">
+          <span class="tide-stat-value text-gradient-tide">30+</span>
+          <span class="tide-stat-label">Components</span>
+        </div>
+        <div class="tide-stat items-center text-center">
+          <span class="tide-stat-value text-gradient-biolume">8</span>
+          <span class="tide-stat-label">Animations</span>
+        </div>
+        <div class="tide-stat items-center text-center">
+          <span class="tide-stat-value text-gradient-tide">∞</span>
+          <span class="tide-stat-label">Composable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave SVG -->
+  <div class="wave-divider bg-abyss-950" style="margin-top: -1px;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" height="60">
+      <path d="M0,30 Q180,0 360,30 Q540,60 720,30 Q900,0 1080,30 Q1260,60 1440,30 L1440,60 L0,60 Z" fill="#030e22"/>
+    </svg>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       COLORS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="colors" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Color System</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Seven curated palettes, each with 11 steps (50–950), inspired by ocean depth.</p>
+      </div>
+
+      <!-- Color palettes -->
+      <div class="space-y-10">
+
+        <!-- Abyss -->
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-lg font-bold text-foam-50">abyss</span>
+            <span class="badge badge-foam">Darkest ocean floor</span>
+          </div>
+          <div class="grid grid-cols-11 gap-1.5">
+            <div class="space-y-1">
+              <div class="h-12 rounded-tide bg-abyss-50 border border-deep-800"></div>
+              <p class="text-xs text-center text-faint">50</p>
+            </div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-100"></div><p class="text-xs text-center text-faint">100</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-200"></div><p class="text-xs text-center text-faint">200</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-300"></div><p class="text-xs text-center text-faint">300</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-400"></div><p class="text-xs text-center text-faint">400</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-500"></div><p class="text-xs text-center text-faint">500</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-600"></div><p class="text-xs text-center text-faint">600</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-700"></div><p class="text-xs text-center text-faint">700</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-800"></div><p class="text-xs text-center text-faint">800</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-900 border border-deep-800"></div><p class="text-xs text-center text-faint">900</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-abyss-950 border border-deep-800"></div><p class="text-xs text-center text-faint">950</p></div>
+          </div>
+        </div>
+
+        <!-- Deep -->
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-lg font-bold text-foam-50">deep</span>
+            <span class="badge badge-tide">Mid-depth blues</span>
+          </div>
+          <div class="grid grid-cols-11 gap-1.5">
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-50 border border-deep-800"></div><p class="text-xs text-center text-faint">50</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-100"></div><p class="text-xs text-center text-faint">100</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-200"></div><p class="text-xs text-center text-faint">200</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-300"></div><p class="text-xs text-center text-faint">300</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-400"></div><p class="text-xs text-center text-faint">400</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-500"></div><p class="text-xs text-center text-faint">500</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-600"></div><p class="text-xs text-center text-faint">600</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-700"></div><p class="text-xs text-center text-faint">700</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-800"></div><p class="text-xs text-center text-faint">800</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-900 border border-deep-800"></div><p class="text-xs text-center text-faint">900</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-deep-950 border border-deep-800"></div><p class="text-xs text-center text-faint">950</p></div>
+          </div>
+        </div>
+
+        <!-- Tide -->
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-lg font-bold text-foam-50">tide</span>
+            <span class="badge badge-current">Transitional teal-blues</span>
+          </div>
+          <div class="grid grid-cols-11 gap-1.5">
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-50 border border-deep-800"></div><p class="text-xs text-center text-faint">50</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-100"></div><p class="text-xs text-center text-faint">100</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-200"></div><p class="text-xs text-center text-faint">200</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-300"></div><p class="text-xs text-center text-faint">300</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-400"></div><p class="text-xs text-center text-faint">400</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-500"></div><p class="text-xs text-center text-faint">500</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-600"></div><p class="text-xs text-center text-faint">600</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-700"></div><p class="text-xs text-center text-faint">700</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-800"></div><p class="text-xs text-center text-faint">800</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-900 border border-deep-800"></div><p class="text-xs text-center text-faint">900</p></div>
+            <div class="space-y-1"><div class="h-12 rounded-tide bg-tide-950 border border-deep-800"></div><p class="text-xs text-center text-faint">950</p></div>
+          </div>
+        </div>
+
+        <!-- Current + Foam + Sand + Biolume — 2-col grid -->
+        <div class="grid md:grid-cols-2 gap-10">
+
+          <!-- Current -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-lg font-bold text-foam-50">current</span>
+              <span class="badge badge-current">Active flow cyan</span>
+            </div>
+            <div class="grid grid-cols-11 gap-1">
+              <div class="space-y-1"><div class="h-10 rounded bg-current-50 border border-deep-800"></div><p class="text-[10px] text-center text-faint">50</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-100"></div><p class="text-[10px] text-center text-faint">100</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-200"></div><p class="text-[10px] text-center text-faint">200</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-300"></div><p class="text-[10px] text-center text-faint">300</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-400"></div><p class="text-[10px] text-center text-faint">400</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-500"></div><p class="text-[10px] text-center text-faint">500</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-600"></div><p class="text-[10px] text-center text-faint">600</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-700"></div><p class="text-[10px] text-center text-faint">700</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-800"></div><p class="text-[10px] text-center text-faint">800</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-900 border border-deep-800"></div><p class="text-[10px] text-center text-faint">900</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-current-950 border border-deep-800"></div><p class="text-[10px] text-center text-faint">950</p></div>
+            </div>
+          </div>
+
+          <!-- Biolume -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-lg font-bold text-foam-50">biolume</span>
+              <span class="badge badge-biolume">Bioluminescent glow</span>
+            </div>
+            <div class="grid grid-cols-11 gap-1">
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-50 border border-deep-800"></div><p class="text-[10px] text-center text-faint">50</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-100"></div><p class="text-[10px] text-center text-faint">100</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-200"></div><p class="text-[10px] text-center text-faint">200</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-300"></div><p class="text-[10px] text-center text-faint">300</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-400"></div><p class="text-[10px] text-center text-faint">400</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-500"></div><p class="text-[10px] text-center text-faint">500</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-600"></div><p class="text-[10px] text-center text-faint">600</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-700"></div><p class="text-[10px] text-center text-faint">700</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-800"></div><p class="text-[10px] text-center text-faint">800</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-900 border border-deep-800"></div><p class="text-[10px] text-center text-faint">900</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-biolume-950 border border-deep-800"></div><p class="text-[10px] text-center text-faint">950</p></div>
+            </div>
+          </div>
+
+          <!-- Foam -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-lg font-bold text-foam-50">foam</span>
+              <span class="badge badge-foam">Surface light & whites</span>
+            </div>
+            <div class="grid grid-cols-11 gap-1">
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-50 border border-deep-800"></div><p class="text-[10px] text-center text-faint">50</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-100 border border-deep-800"></div><p class="text-[10px] text-center text-faint">100</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-200 border border-deep-800"></div><p class="text-[10px] text-center text-faint">200</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-300"></div><p class="text-[10px] text-center text-faint">300</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-400"></div><p class="text-[10px] text-center text-faint">400</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-500"></div><p class="text-[10px] text-center text-faint">500</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-600"></div><p class="text-[10px] text-center text-faint">600</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-700"></div><p class="text-[10px] text-center text-faint">700</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-800"></div><p class="text-[10px] text-center text-faint">800</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-900 border border-deep-800"></div><p class="text-[10px] text-center text-faint">900</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-foam-950 border border-deep-800"></div><p class="text-[10px] text-center text-faint">950</p></div>
+            </div>
+          </div>
+
+          <!-- Sand -->
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-lg font-bold text-foam-50">sand</span>
+              <span class="badge badge-sand">Coastal warm gold</span>
+            </div>
+            <div class="grid grid-cols-11 gap-1">
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-50 border border-deep-800"></div><p class="text-[10px] text-center text-faint">50</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-100 border border-deep-800"></div><p class="text-[10px] text-center text-faint">100</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-200 border border-deep-800"></div><p class="text-[10px] text-center text-faint">200</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-300"></div><p class="text-[10px] text-center text-faint">300</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-400"></div><p class="text-[10px] text-center text-faint">400</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-500"></div><p class="text-[10px] text-center text-faint">500</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-600"></div><p class="text-[10px] text-center text-faint">600</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-700"></div><p class="text-[10px] text-center text-faint">700</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-800"></div><p class="text-[10px] text-center text-faint">800</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-900 border border-deep-800"></div><p class="text-[10px] text-center text-faint">900</p></div>
+              <div class="space-y-1"><div class="h-10 rounded bg-sand-950 border border-deep-800"></div><p class="text-[10px] text-center text-faint">950</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       TYPOGRAPHY
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="typography" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Typography</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Three font families — <code>sans</code>, <code>display</code>, <code>mono</code> — with gradient text utilities.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-8">
+          <div>
+            <p class="tide-stat-label mb-3">Heading Scale</p>
+            <h1 class="text-5xl font-extrabold text-foam-50 mb-2">Display H1</h1>
+            <h2 class="text-4xl font-bold text-foam-100 mb-2">Heading H2</h2>
+            <h3 class="text-3xl font-bold text-foam-100 mb-2">Sub-heading H3</h3>
+            <h4 class="text-2xl font-semibold text-foam-200 mb-2">Section H4</h4>
+            <h5 class="text-xl font-semibold text-foam-200 mb-2">Card Title H5</h5>
+            <h6 class="text-lg font-semibold text-foam-300">Label H6</h6>
+          </div>
+          <div>
+            <p class="tide-stat-label mb-3">Body & UI Text</p>
+            <p class="text-lg text-foam-100 mb-2">Large body — tidal currents shape coastlines over geological time.</p>
+            <p class="text-base text-foam-200 mb-2">Base body — the Laplacian tidal equations describe periodic sea-level oscillations.</p>
+            <p class="text-sm text-muted mb-2">Small / muted — used for secondary descriptions and hints.</p>
+            <p class="text-xs text-faint tracking-wide uppercase">Caption / label — metadata, timestamps, status</p>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <p class="tide-stat-label mb-3">Gradient Text</p>
+            <p class="text-5xl font-extrabold text-gradient-tide mb-4 leading-tight">Tide Gradient</p>
+            <p class="text-5xl font-extrabold text-gradient-biolume mb-4 leading-tight">Biolume Gradient</p>
+            <p class="text-5xl font-extrabold text-gradient-deep leading-tight">Deep Gradient</p>
+          </div>
+          <div>
+            <p class="tide-stat-label mb-3">Glow Text</p>
+            <p class="text-3xl font-bold text-current-400 text-glow-current mb-3">Glowing current</p>
+            <p class="text-3xl font-bold text-biolume-400 text-glow-biolume">Glowing biolume</p>
+          </div>
+          <div>
+            <p class="tide-stat-label mb-3">Monospace</p>
+            <p class="font-mono text-biolume-300">const wave = (t) => Math.sin(2π * t / T);</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       BUTTONS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="buttons" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Buttons</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Composable button system — variant + size classes.</p>
+      </div>
+
+      <div class="space-y-10">
+        <!-- Variants -->
+        <div>
+          <p class="tide-stat-label mb-4">Variants</p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-current">Current</button>
+            <button class="btn btn-biolume">Biolume</button>
+            <button class="btn btn-ghost">Ghost</button>
+            <button class="btn btn-outline">Outline</button>
+            <button class="btn btn-primary" disabled>Disabled</button>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div>
+          <p class="tide-stat-label mb-4">Sizes</p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <button class="btn btn-current btn-sm">Small</button>
+            <button class="btn btn-current">Base</button>
+            <button class="btn btn-current btn-lg">Large</button>
+            <button class="btn btn-current btn-xl">XL</button>
+          </div>
+        </div>
+
+        <!-- With icons -->
+        <div>
+          <p class="tide-stat-label mb-4">With Icons</p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <button class="btn btn-current">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Confirm
+            </button>
+            <button class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Add new
+            </button>
+            <button class="btn btn-outline">
+              Explore
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="btn btn-biolume">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z"/>
+                <path d="M6.5 5.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM5 10a3 3 0 016 0H5z"/>
+              </svg>
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       CARDS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="cards" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Cards</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Three card surfaces — <code>tide-card</code>, <code>tide-card-glow</code>, and <code>tide-card-glass</code>.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Base card -->
+        <div class="tide-card">
+          <div class="tide-card-header">
+            <p class="tide-card-title">Base Card</p>
+            <p class="tide-card-subtitle">Low-profile surface for content</p>
+          </div>
+          <p class="text-foam-300 text-sm leading-relaxed">
+            The foundational card component. Subtle border, abyss background,
+            gentle hover lift with tide glow.
+          </p>
+          <div class="tide-card-footer">
+            <button class="btn btn-ghost btn-sm">Read more</button>
+            <span class="badge badge-foam">Default</span>
+          </div>
+        </div>
+
+        <!-- Glow card -->
+        <div class="tide-card-glow">
+          <div class="tide-card-header">
+            <p class="tide-card-title">Glow Card</p>
+            <p class="tide-card-subtitle">Highlighted with tide border glow</p>
+          </div>
+          <p class="text-foam-300 text-sm leading-relaxed">
+            Use <code>tide-card-glow</code> to draw attention to important content.
+            Transitions to a bright current glow on hover.
+          </p>
+          <div class="tide-card-footer">
+            <button class="btn btn-current btn-sm">Learn more</button>
+            <span class="badge badge-current">Featured</span>
+          </div>
+        </div>
+
+        <!-- Glass card -->
+        <div class="tide-card-glass" style="background-image: url('data:image/svg+xml,%3Csvg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3C/svg%3E');">
+          <div class="tide-card-header">
+            <p class="tide-card-title">Glass Card</p>
+            <p class="tide-card-subtitle">Frosted backdrop-blur surface</p>
+          </div>
+          <p class="text-foam-300 text-sm leading-relaxed">
+            The glassmorphism variant using <code>backdrop-filter: blur</code>.
+            Ideal over gradient or image backgrounds.
+          </p>
+          <div class="tide-card-footer">
+            <button class="btn btn-outline btn-sm">Details</button>
+            <span class="badge badge-biolume">Glass</span>
+          </div>
+        </div>
+
+        <!-- Animated border card -->
+        <div class="border-animated p-6 md:col-span-2">
+          <div class="mb-4">
+            <p class="tide-card-title">Animated Border Card</p>
+            <p class="tide-card-subtitle">Gradient border that cycles through the palette</p>
+          </div>
+          <p class="text-foam-300 text-sm leading-relaxed mb-4">
+            Combine <code>border-animated</code> with any inner content. The pseudo-element
+            rotates through tide → current → biolume endlessly via the shimmer keyframe.
+          </p>
+          <div class="flex gap-3">
+            <button class="btn btn-biolume btn-sm">Deploy</button>
+            <button class="btn btn-ghost btn-sm">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Stat card -->
+        <div class="tide-card-glow flex flex-col gap-6">
+          <div class="tide-stat">
+            <span class="tide-stat-label">Total Depth</span>
+            <span class="tide-stat-value text-gradient-tide">11,000m</span>
+            <span class="tide-stat-delta">▲ 2.4% this cycle</span>
+          </div>
+          <div class="tide-stat">
+            <span class="tide-stat-label">Wave Energy</span>
+            <span class="tide-stat-value">4.2 TW</span>
+            <span class="tide-stat-delta tide-stat-delta-neg">▼ 0.7%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FORMS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="forms" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Forms</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Inputs, labels, hints, errors — all styled for the deep-ocean surface.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Form example -->
+        <div class="tide-card-glow">
+          <h3 class="text-xl font-bold text-foam-50 mb-6">Tidal Survey Form</h3>
+
+          <div class="tide-form-group">
+            <label class="tide-label" for="station-name">Station Name</label>
+            <input class="tide-input" id="station-name" type="text" placeholder="e.g. Challenger Deep Alpha" />
+            <p class="tide-hint">Use the official NOAA station identifier.</p>
+          </div>
+
+          <div class="tide-form-group">
+            <label class="tide-label" for="coordinates">Coordinates</label>
+            <input class="tide-input" id="coordinates" type="text" placeholder="11.3694° N, 142.5913° E" />
+          </div>
+
+          <div class="tide-form-group">
+            <label class="tide-label" for="depth">Depth (meters)</label>
+            <input class="tide-input" id="depth" type="number" placeholder="10994" />
+            <p class="tide-error">Value must be a valid positive depth.</p>
+          </div>
+
+          <div class="tide-form-group">
+            <label class="tide-label" for="notes">Notes</label>
+            <textarea class="tide-input" id="notes" rows="3" placeholder="Observation notes…" style="resize: vertical;"></textarea>
+          </div>
+
+          <div class="flex gap-3">
+            <button class="btn btn-current">Submit Reading</button>
+            <button class="btn btn-ghost">Clear</button>
+          </div>
+        </div>
+
+        <!-- Input states + select -->
+        <div class="space-y-6">
+          <div>
+            <p class="tide-stat-label mb-4">Input States</p>
+            <div class="space-y-4">
+              <div class="tide-form-group">
+                <label class="tide-label">Normal</label>
+                <input class="tide-input" type="text" placeholder="Enter value…" />
+              </div>
+              <div class="tide-form-group">
+                <label class="tide-label">Focused (click to activate)</label>
+                <input class="tide-input" type="text" placeholder="Focus me" autofocus />
+              </div>
+              <div class="tide-form-group">
+                <label class="tide-label">Disabled</label>
+                <input class="tide-input" type="text" value="Locked datum" disabled />
+              </div>
+              <div class="tide-form-group">
+                <label class="tide-label">Select</label>
+                <select class="tide-input">
+                  <option>Pacific Ocean</option>
+                  <option>Atlantic Ocean</option>
+                  <option>Indian Ocean</option>
+                  <option>Arctic Ocean</option>
+                  <option>Southern Ocean</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       COMPONENTS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="components" class="tide-section">
+    <div class="tide-container space-y-16">
+
+      <div>
+        <div class="wave-line mb-10">
+          <h2 class="text-4xl font-extrabold text-foam-50">Components</h2>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div>
+        <p class="tide-stat-label mb-4">Badges</p>
+        <div class="flex flex-wrap gap-3 items-center">
+          <span class="badge badge-tide">tide</span>
+          <span class="badge badge-current">current</span>
+          <span class="badge badge-biolume">biolume</span>
+          <span class="badge badge-sand">sand</span>
+          <span class="badge badge-foam">foam</span>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div>
+        <p class="tide-stat-label mb-4">Alerts</p>
+        <div class="space-y-4">
+          <div class="tide-alert tide-alert-info">
+            <svg class="w-5 h-5 shrink-0 mt-0.5 text-foam-400" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 9v5M10 7h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div><strong class="text-foam-50">Information</strong> — Tidal gauges are calibrated every 24 hours using atomic time.</div>
+          </div>
+          <div class="tide-alert tide-alert-tide">
+            <svg class="w-5 h-5 shrink-0 mt-0.5 text-tide-300" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+              <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 9v5M10 7h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div><strong class="text-tide-200">Tide Note</strong> — Spring tides occur near new and full moon phases.</div>
+          </div>
+          <div class="tide-alert tide-alert-biolume">
+            <svg class="w-5 h-5 shrink-0 mt-0.5 text-biolume-300" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 2l2.09 6.26H18l-5.09 3.8 1.99 6.16L10 14.27l-4.9 3.95 1.99-6.16L2 8.26h5.91L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            <div><strong class="text-biolume-200">Discovery</strong> — Bioluminescent blooms detected at grid sector 7-Delta.</div>
+          </div>
+          <div class="tide-alert tide-alert-warning">
+            <svg class="w-5 h-5 shrink-0 mt-0.5 text-sand-300" fill="none" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 3l8 14H2L10 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M10 9v4M10 15h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div><strong class="text-sand-200">Warning</strong> — Anomalous salinity readings detected in sector 3-Gamma.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bars -->
+      <div>
+        <p class="tide-stat-label mb-4">Progress Bars</p>
+        <div class="space-y-5 max-w-lg">
+          <div>
+            <div class="flex justify-between mb-1.5">
+              <span class="text-sm text-foam-300">Depth mapping</span>
+              <span class="text-sm text-current-400">72%</span>
+            </div>
+            <div class="tide-progress">
+              <div class="tide-progress-bar" style="width: 72%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1.5">
+              <span class="text-sm text-foam-300">Sample analysis</span>
+              <span class="text-sm text-biolume-400">45%</span>
+            </div>
+            <div class="tide-progress">
+              <div class="tide-progress-bar tide-progress-bar-biolume" style="width: 45%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1.5">
+              <span class="text-sm text-foam-300">Data upload</span>
+              <span class="text-sm text-current-400">91%</span>
+            </div>
+            <div class="tide-progress">
+              <div class="tide-progress-bar" style="width: 91%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatars -->
+      <div>
+        <p class="tide-stat-label mb-4">Avatars</p>
+        <div class="flex flex-wrap gap-4 items-end">
+          <div class="tide-avatar tide-avatar-sm">LT</div>
+          <div class="tide-avatar">CS</div>
+          <div class="tide-avatar tide-avatar-lg">PL</div>
+          <div class="tide-avatar tide-avatar-xl tide-avatar-glow">∿</div>
+          <div class="tide-avatar tide-avatar-lg" style="background: var(--lt-glow);">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=tides" alt="avatar" width="56" height="56" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Tooltips -->
+      <div>
+        <p class="tide-stat-label mb-4">Tooltips</p>
+        <div class="flex flex-wrap gap-6">
+          <div class="tide-tooltip-wrap">
+            <button class="btn btn-ghost btn-sm">Hover me</button>
+            <span class="tide-tooltip">Pure CSS tooltip — no JS needed</span>
+          </div>
+          <div class="tide-tooltip-wrap">
+            <span class="badge badge-biolume cursor-default">Depth: 10,994 m</span>
+            <span class="tide-tooltip">Challenger Deep, Mariana Trench</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div>
+        <p class="tide-stat-label mb-4">Tags</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tide-tag">oceanography</span>
+          <span class="tide-tag">tidal-flow</span>
+          <span class="tide-tag">laplace</span>
+          <span class="tide-tag">bioluminescence</span>
+          <span class="tide-tag">deep-sea</span>
+          <span class="tide-tag">CSS</span>
+          <span class="tide-tag">tailwind</span>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div>
+        <p class="tide-stat-label mb-4">Table</p>
+        <div class="tide-card overflow-hidden p-0">
+          <table class="tide-table">
+            <thead>
+              <tr>
+                <th>Ocean</th>
+                <th>Max Depth</th>
+                <th>Tidal Range</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium text-foam-50">Pacific</td>
+                <td>10,994 m</td>
+                <td>0.5 – 1.0 m</td>
+                <td><span class="badge badge-biolume">Monitored</span></td>
+                <td><a href="#" class="text-current-400 text-sm hover:text-biolume-400">View →</a></td>
+              </tr>
+              <tr>
+                <td class="font-medium text-foam-50">Atlantic</td>
+                <td>8,486 m</td>
+                <td>0.8 – 16 m</td>
+                <td><span class="badge badge-current">Active</span></td>
+                <td><a href="#" class="text-current-400 text-sm hover:text-biolume-400">View →</a></td>
+              </tr>
+              <tr>
+                <td class="font-medium text-foam-50">Indian</td>
+                <td>7,258 m</td>
+                <td>0.5 – 7 m</td>
+                <td><span class="badge badge-tide">Surveying</span></td>
+                <td><a href="#" class="text-current-400 text-sm hover:text-biolume-400">View →</a></td>
+              </tr>
+              <tr>
+                <td class="font-medium text-foam-50">Arctic</td>
+                <td>5,567 m</td>
+                <td>0.1 – 0.5 m</td>
+                <td><span class="badge badge-foam">Minimal</span></td>
+                <td><a href="#" class="text-current-400 text-sm hover:text-biolume-400">View →</a></td>
+              </tr>
+              <tr>
+                <td class="font-medium text-foam-50">Southern</td>
+                <td>7,236 m</td>
+                <td>0.5 – 3 m</td>
+                <td><span class="badge badge-sand">Seasonal</span></td>
+                <td><a href="#" class="text-current-400 text-sm hover:text-biolume-400">View →</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Code block -->
+      <div>
+        <p class="tide-stat-label mb-4">Code Block</p>
+        <div class="tide-code-block">
+<span class="text-foam-400">// install</span>
+<span class="text-biolume-300">npm</span> <span class="text-foam-200">install laplace-tides-css</span>
+
+<span class="text-foam-400">// tailwind.config.js</span>
+<span class="text-tide-300">module</span><span class="text-foam-200">.exports = {
+  plugins: [</span><span class="text-biolume-300">require</span><span class="text-foam-200">(</span><span class="text-sand-300">'laplace-tides-css'</span><span class="text-foam-200">)],
+};</span>
+
+<span class="text-foam-400">// your HTML</span>
+<span class="text-current-300">&lt;button</span> <span class="text-tide-300">class</span><span class="text-foam-200">=</span><span class="text-sand-300">"btn btn-current"</span><span class="text-current-300">&gt;</span>
+  <span class="text-foam-200">Dive In</span>
+<span class="text-current-300">&lt;/button&gt;</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       ANIMATIONS
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section id="animations" class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Animations</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Eight built-in keyframe animations accessible via Tailwind utility classes.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+        <!-- wave -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="animate-wave w-12 h-12 rounded-full bg-gradient-current flex items-center justify-center text-abyss-950 font-bold text-xl">∿</div>
+          </div>
+          <p class="font-semibold text-foam-100">wave</p>
+          <code class="text-xs text-biolume-300">animate-wave</code>
+          <p class="text-xs text-faint mt-1">Gentle vertical bob, 3s loop</p>
+        </div>
+
+        <!-- wave-slow -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="animate-wave-slow w-12 h-12 rounded-full border-2 border-current-400 glow-current flex items-center justify-center text-current-400 font-bold text-xl">⊕</div>
+          </div>
+          <p class="font-semibold text-foam-100">wave-slow</p>
+          <code class="text-xs text-biolume-300">animate-wave-slow</code>
+          <p class="text-xs text-faint mt-1">Slow 5s variant</p>
+        </div>
+
+        <!-- drift -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="animate-drift w-12 h-12 rounded-xl bg-tide-700 flex items-center justify-center text-tide-200 font-bold text-xl">↗</div>
+          </div>
+          <p class="font-semibold text-foam-100">drift</p>
+          <code class="text-xs text-biolume-300">animate-drift</code>
+          <p class="text-xs text-faint mt-1">Multi-axis float, 7s loop</p>
+        </div>
+
+        <!-- pulse-glow -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="animate-pulse-glow w-12 h-12 rounded-full bg-current-800 border border-current-500 flex items-center justify-center text-current-300 font-bold text-xl">◉</div>
+          </div>
+          <p class="font-semibold text-foam-100">pulse-glow</p>
+          <code class="text-xs text-biolume-300">animate-pulse-glow</code>
+          <p class="text-xs text-faint mt-1">Breathing glow radius</p>
+        </div>
+
+        <!-- shimmer -->
+        <div class="tide-card text-center">
+          <div class="mb-4 mx-auto w-36 h-5 rounded skeleton"></div>
+          <div class="mb-4 mx-auto w-28 h-5 rounded skeleton"></div>
+          <p class="font-semibold text-foam-100">shimmer</p>
+          <code class="text-xs text-biolume-300">animate-shimmer</code>
+          <p class="text-xs text-faint mt-1">Skeleton loading sweep</p>
+        </div>
+
+        <!-- fade-in -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="animate-fade-in w-12 h-12 bg-biolume-800 border border-biolume-600 rounded-tide flex items-center justify-center text-biolume-300 font-bold text-lg">↑</div>
+          </div>
+          <p class="font-semibold text-foam-100">fade-in</p>
+          <code class="text-xs text-biolume-300">animate-fade-in</code>
+          <p class="text-xs text-faint mt-1">Entrance slide + opacity</p>
+        </div>
+
+        <!-- ripple (on click) -->
+        <div class="tide-card text-center">
+          <div class="flex justify-center mb-4">
+            <div class="relative w-12 h-12 flex items-center justify-center">
+              <div class="absolute inset-0 rounded-full border-2 border-current-400 animate-ripple opacity-0"></div>
+              <div class="w-8 h-8 rounded-full bg-current-600 flex items-center justify-center text-current-200 font-bold">●</div>
+            </div>
+          </div>
+          <p class="font-semibold text-foam-100">ripple</p>
+          <code class="text-xs text-biolume-300">animate-ripple</code>
+          <p class="text-xs text-faint mt-1">Expanding ring burst</p>
+        </div>
+
+        <!-- ticker -->
+        <div class="tide-card text-center overflow-hidden">
+          <div class="whitespace-nowrap mb-4 text-current-400 font-mono text-sm animate-ticker inline-block">
+            abyss &nbsp;·&nbsp; deep &nbsp;·&nbsp; tide &nbsp;·&nbsp; current &nbsp;·&nbsp; foam &nbsp;·&nbsp; sand &nbsp;·&nbsp; biolume &nbsp;·&nbsp;
+            abyss &nbsp;·&nbsp; deep &nbsp;·&nbsp; tide &nbsp;·&nbsp; current &nbsp;·&nbsp; foam &nbsp;·&nbsp; sand &nbsp;·&nbsp; biolume &nbsp;·&nbsp;
+          </div>
+          <p class="font-semibold text-foam-100">ticker</p>
+          <code class="text-xs text-biolume-300">animate-ticker</code>
+          <p class="text-xs text-faint mt-1">Infinite marquee scroll</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       GRADIENT & UTILITY SHOWCASE
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <section class="tide-section">
+    <div class="tide-container">
+      <div class="mb-12">
+        <div class="wave-line">
+          <h2 class="text-4xl font-extrabold text-foam-50">Gradient & Utility Helpers</h2>
+        </div>
+        <p class="text-muted mt-3 text-lg">Background gradients, glow utilities, and surface helpers ready to use.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="rounded-tide-lg h-32 flex items-end p-4 bg-gradient-ocean">
+          <code class="text-xs text-foam-300">bg-gradient-ocean</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 bg-gradient-current">
+          <code class="text-xs text-abyss-950 font-semibold">bg-gradient-current</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 bg-gradient-biolume">
+          <code class="text-xs text-abyss-950 font-semibold">bg-gradient-biolume</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 bg-gradient-surface border border-deep-800">
+          <code class="text-xs text-foam-300">bg-gradient-surface</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 bg-gradient-hero">
+          <code class="text-xs text-foam-300">bg-gradient-hero</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 surface-raised glow-current">
+          <code class="text-xs text-foam-300">surface-raised + glow-current</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 surface glow-biolume">
+          <code class="text-xs text-foam-300">surface + glow-biolume</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-end p-4 surface-sunken border-glow">
+          <code class="text-xs text-foam-300">surface-sunken + border-glow</code>
+        </div>
+        <div class="rounded-tide-lg h-32 flex items-center justify-center surface glow-tide">
+          <span class="text-3xl font-extrabold text-gradient-tide text-glow-current">∿ Deep</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="tide-divider-glow" />
+
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════════════════════ -->
+  <footer class="bg-abyss-950 border-t border-deep-900 tide-section-sm">
+    <div class="tide-container">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <circle cx="14" cy="14" r="13" stroke="url(#footGrad)" stroke-width="2"/>
+            <path d="M5 16 Q10 10 14 14 Q18 18 23 12" stroke="url(#footGrad2)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="footGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00a0bd"/><stop offset="1" stop-color="#00ffd4"/>
+              </linearGradient>
+              <linearGradient id="footGrad2" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00c4dc"/><stop offset="1" stop-color="#00e8bf"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="font-bold text-foam-50">Laplace Tides</span>
+          <span class="badge badge-foam">v1.0.0</span>
+        </div>
+        <p class="text-faint text-sm text-center">
+          Named after <a href="https://en.wikipedia.org/wiki/Pierre-Simon_Laplace" target="_blank" rel="noopener" class="text-current-400 hover:text-biolume-400">Pierre-Simon Laplace</a>
+          &mdash; mathematician, astronomer, tidal theorist.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/NagusameCS/LaplaceTidesCSS" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">GitHub</a>
+          <span class="text-faint text-sm">MIT License</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

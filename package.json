@@ -1,0 +1,16 @@
+{
+  "name": "laplace-tides-css",
+  "version": "1.0.0",
+  "description": "A Tailwind CSS design system inspired by tidal flows and deep ocean aesthetics",
+  "main": "plugin/index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./demo/laplace-tides.css --minify",
+    "build:dev": "npx tailwindcss -i ./src/input.css -o ./demo/laplace-tides.css",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./demo/laplace-tides.css --watch"
+  },
+  "keywords": ["tailwindcss", "css", "design-system", "ocean", "plugin"],
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
